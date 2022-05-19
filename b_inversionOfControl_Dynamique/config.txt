@@ -1,0 +1,2 @@
+b_inversionOfControl_Dynamique.dao.DaoImpl
+b_inversionOfControl_Dynamique.metier.MetierImpl
