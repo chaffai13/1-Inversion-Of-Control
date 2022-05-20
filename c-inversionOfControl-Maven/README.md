@@ -5,7 +5,8 @@
 	c) mvn package (compiler + executer tests + générer package "JAR = java archive" ou "WAR = web archive" )
 	d) mvn install (compiler + executer tests + générer package + installer le package dans le répository locale ".m2")
 	e) mvn deploy 
-	e) mvn site (générer un fichier html qui constitue la doc du projet) 
+	f) mvn site (générer un fichier html qui constitue la doc du projet) 
+	g) mvn clean (il vide le dossier target)
 
 2) Créer une interface IDao dans le package a_inversionOfControl.Dao
 	Déclarer la méthode getData() qui retourne un double dans l'interface IDao
@@ -43,7 +44,7 @@
     ==> Créer un objet ApplicationContext de type ClassPathXmlApplicationContext
     ==> Cette Class utilise l'instanciation Dynamique(elle est fermée à la modification ouverte à l'extension)
 
-12) Pour utiliser la nouvelle extension il suffit de lui indiquer le chemin de la nouvelle extension dans
+11) Pour utiliser la nouvelle extension il suffit de lui indiquer le chemin de la nouvelle extension dans
    le fichier ApplicationContext.xml:
    
     ==> c_inversionOfControl_Maven.extension.DaoImplV2 
@@ -51,14 +52,24 @@
 
 //-----------------------Version Annotation----------------------------------------------//
 
-9) Ajouter l'annotation @Component("dao") à DaoImlp ==> dir à spring à chaque fois ou tu trouve
+12) Ajouter l'annotation @Component("dao") à DaoImlp ==> dir à spring à chaque fois ou tu trouve
    cette annotation il faut instancier cette class et donne lui le nom "dao"
 
-10) Ajouter l'annotation @Component("metier") à metierImlp 
+13) Ajouter l'annotation @Component("metier") à metierImlp 
 
-11) Pour faire l'injection de dépendence Ajouter l'annotation @Autowired à private IDao dao
+14) Pour faire l'injection de dépendence Ajouter l'annotation @Autowired à private IDao dao
 
-12) Créer une class PresSpringAnnotation avec un "main" puis 
+15) Créer une class PresSpringAnnotation avec un "main" puis 
 
     ==> Créer un objet ApplicationContext de type AnnotationConfigApplicationContext
     ==> Cette Class utilise l'instanciation Dynamique(elle est fermée à la modification ouverte à l'extension)
+    
+//-----------------------Test unitaire----------------------------------------------//    
+
+16)Pour pouvoir utiliser les tests unitaire il faut ajouter la dépondence:
+
+    ==> JUnit
+    
+17) Pour créer un test unitaire créer une class "CalculTest" dans le répertoire src/test/java
+ 
+ 
