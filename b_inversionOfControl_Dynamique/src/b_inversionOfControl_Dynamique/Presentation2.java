@@ -32,6 +32,7 @@ public class Presentation2 {
 		//2) Charger la class DaoImpl en mémoire dynamiquement
 		Class cDao = Class.forName(daoClassName);		
 		//3) Créer l'objet de la Class DaoImpl
+		// Object dao = cDao.newInstance();
 		IDao dao = (IDao) cDao.newInstance();
 
 //II) Instanciation Dynamique de MetierImpl
@@ -41,13 +42,14 @@ public class Presentation2 {
 		//2) Charger la class MetierImpl en mémoire dynamiquement
 		Class cMetier = Class.forName(metierClassName);		
 		//3) Créer l'objet de la Class MetierImpl
+		// Object metier = cMetier.newInstance();
 		Imetier metier = (Imetier) cMetier.newInstance();
 		
 //III) Appeler la méthode setDao() de MetierImpl dynamiquement
 		
 		//1)Récupérer la méthode setDao()
 		Method method = cMetier.getMethod("setDao", IDao.class);
-		//2)Exécuter la méthode setDao() surl'objet metier et lui transmettre dao 
+		//2)Exécuter la méthode setDao() surl'objet metier et lui transmettre dao = metier.setDao(dao)
 		//Injection de dépendance par instanciation dynamique
 		method.invoke(metier, dao);
 		

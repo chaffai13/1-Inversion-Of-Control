@@ -1,0 +1,2 @@
+c_inversionOfControl_Maven.dao.DaoImpl
+c_inversionOfControl_Maven.metier.MetierImpl

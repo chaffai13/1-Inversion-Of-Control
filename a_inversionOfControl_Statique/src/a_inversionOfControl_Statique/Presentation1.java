@@ -12,7 +12,7 @@ public class Presentation1 {
 		DaoImpl dao = new DaoImpl();
 		
 		/*Injection dépendance par instanciation statique via le Constructeur 
-		 * (liaison avec Agrégation)
+		 * (liaison avec Agrégation ==> relation forte)
 		MetierImpl metier = new MetierImpl(dao);*/
 		
 		MetierImpl metier = new MetierImpl();
